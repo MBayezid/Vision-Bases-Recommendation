@@ -16,8 +16,8 @@ python
 
 # Large directories
 */datasets/
-data/
-models/
+# data/
+# models/
 */checkpoints/
 */logs/
 app/static/images/

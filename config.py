@@ -18,11 +18,18 @@ class Config:
     ANNOY_INDEX_PATH = DATA_DIR / 'fashion-product-images-small-annoy-embeddings.ann'
     ITEM_MAPPING_PATH = DATA_DIR / 'item_mapping-fashion-product-images-small.json'
 
-    # These need to match your model/data
     EMBEDDING_DIM = 2048 # Example dimension, adjust based on your model!
-    ANNOY_METRIC = 'angular' # Or 'euclidean', etc.
-    NUM_RECOMMENDATIONS = 18
+    # ANNOY_METRIC = 'angular' # Or 'euclidean', etc.
+    # NUM_RECOMMENDATIONS = 18
+    # # These need to match your model/data
     STATIC_IMAGE_FOLDER = 'images' # Subfolder within 'static' for product images
+
+
+    # --- Model & Search Parameters ---
+    # EMBEDDING_DIM = 128 # IMPORTANT: Set this to the actual output dimension of your TFLite model
+    NUM_RECOMMENDATIONS = 10 # Number of similar images to return
+    NEIGHBORS_METRIC = 'cosine' # Metric for NearestNeighbors ('cosine', 'euclidean', 'minkowski', etc.)
+                                # 'cosine' is often good for embeddings. Ensure it matches how embeddings were trained/intended.
 
     # Ensure necessary directories exist
     UPLOAD_FOLDER.mkdir(parents=True, exist_ok=True)
