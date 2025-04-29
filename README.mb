@@ -1,0 +1,28 @@
+Directory Structure:
+
+flask_production_app/
+├── run.py
+├── config.py
+├── app/
+│   ├── __init__.py
+│   ├── routes.py
+│   ├── ml/
+│   │   ├── __init__.py
+│   │   ├── engine.py
+│   │   └── utils.py
+│   ├── static/
+│   │   ├── css/style.css
+│   │   ├── js/script.js
+│   │   └── images/  # <-- IMPORTANT: Put product images here
+│   │   └── uploads/ # <-- Created automatically if needed
+│   ├── templates/
+│   │   └── index.html
+│   └── utils.py # General app utils (if any needed later)
+├── models/
+│   └── quantized/
+│       └── model_quantized_encoder.tflite
+├── data/
+│   ├── fashion-product-images-small-annoy-embeddings.ann
+│   └── item_mapping-fashion-product-images-small.json
+├── requirements.txt
+└── passenger_wsgi.py

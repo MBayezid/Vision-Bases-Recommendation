@@ -1,0 +1,32 @@
+python
+
+# Large files
+*.zip
+*.tar
+*.gz
+*.rar
+*.pkl
+*.h5
+*.hdf5
+*.model
+*.bin
+*.ckpt
+*.pth
+*.weights
+
+# Large directories
+*/datasets/
+data/
+models/
+*/checkpoints/
+*/logs/
+app/static/images/
+app/static/uploads/ 
+
+# Python virtual environments
+venv/
+env/
+.env/
+.venv/
+ENV/
+__pycache__/

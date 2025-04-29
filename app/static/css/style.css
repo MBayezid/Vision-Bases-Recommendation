@@ -1,0 +1,178 @@
+/* static/css/style.css */
+/* This CSS file is for styling the HTML elements in the web application.
+   It includes styles for the body, container, headings, upload section,
+   preview area, status messages, loader, and results grid. */
+/* General Styling */
+/* General Styling */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    padding: 20px;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #1a535c; /* Dark teal */
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-top: 40px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+p {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Upload Section */
+.upload-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #e8f4f8; /* Light blue background */
+    border-radius: 5px;
+}
+
+input[type="file"] {
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 4px;
+    margin-right: 15px;
+    cursor: pointer;
+    /* Basic styling, browser defaults vary */
+}
+/* Style the button that replaces the default file input appearance if desired */
+/* input[type="file"]::file-selector-button { ... } */
+
+button {
+    padding: 10px 20px;
+    background-color: #4ecdc4; /* Teal button */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+    background-color: #1a535c; /* Darker teal on hover */
+}
+
+/* Preview Area */
+.preview-area {
+    text-align: center;
+    margin-top: 25px;
+    min-height: 180px; /* Allocate space */
+    border: 1px dashed #ccc;
+    padding: 15px;
+    background-color: #fafafa;
+    border-radius: 5px;
+}
+
+.preview-area p {
+    margin: 0 0 10px 0;
+    font-style: italic;
+    color: #777;
+}
+
+#imagePreview {
+    max-width: 200px; /* Limit preview size */
+    max-height: 150px;
+    display: block;
+    margin: 0 auto; /* Center the image */
+    border: 1px solid #eee;
+    display: none; /* Hidden initially */
+}
+
+/* Status and Loader */
+.status-message {
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+    min-height: 1.5em; /* Prevent layout shifts */
+    padding: 10px;
+    border-radius: 4px;
+}
+.status-message.success { color: #28a745; background-color: #d4edda; border: 1px solid #c3e6cb; }
+.status-message.error { color: #dc3545; background-color: #f8d7da; border: 1px solid #f5c6cb; }
+.status-message.loading { color: #004085; background-color: #cce5ff; border: 1px solid #b8daff; }
+.status-message.info { color: #17a2b8; background-color: #d1ecf1; border: 1px solid #bee5eb; }
+
+
+.loader {
+  margin: 20px auto;
+  border: 5px solid #f3f3f3; /* Light grey */
+  border-top: 5px solid #4ecdc4; /* Teal */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  display: none; /* Hidden initially */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+/* Results Grid */
+.results-container {
+    margin-top: 30px;
+}
+
+.results-grid {
+    margin-top: 20px;
+    display: grid;
+    /* Adjust minmax for desired minimum image size */
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px; /* Increased gap */
+    align-items: start; /* Align items to the start */
+    justify-items: center;
+    padding: 10px;
+}
+
+.results-grid img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px; /* Slightly rounded corners */
+    box-shadow: 3px 3px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    background-color: #fff; /* Ensure background if image is transparent */
+}
+
+.results-grid img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 4px 4px 12px rgba(0,0,0,0.15);
+}
+
+#results-placeholder {
+    grid-column: 1 / -1; /* Span across all columns */
+    text-align: center;
+    color: #888;
+    font-style: italic;
+}

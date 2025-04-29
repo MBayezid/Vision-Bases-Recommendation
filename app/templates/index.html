@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Similarity Search Demo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Visually Similarity Search</h1>
+        <p>Upload a fashion product image to find visually similar items.</p>
+
+        <div class="upload-section">
+            <input type="file" id="imageUpload" accept="image/png, image/jpeg, image/webp">
+            <button id="recommendBtn" disabled>Get Recommendations</button> </div>
+
+        <div class="preview-area">
+            <p>Image Preview:</p>
+            <img id="imagePreview" src="#" alt="Image preview will appear here" />
+        </div>
+
+        <div id="status" class="status-message">
+            Please select an image file.
+        </div>
+        <div id="loader" class="loader" style="display: none;"></div> <div class="results-container">
+            <h2>Recommendations:</h2>
+            <div id="results" class="results-grid">
+                <p id="results-placeholder">Recommendations will appear here.</p>
+            </div>
+        </div>
+    </div> <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
