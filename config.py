@@ -14,9 +14,11 @@ class Config:
     # ML Configuration
     MODEL_DIR = BASE_DIR / 'models'
     DATA_DIR = BASE_DIR / 'data'
-    TFLITE_MODEL_PATH = MODEL_DIR / 'quantized' / 'model_quantized_encoder.tflite'
-    ANNOY_INDEX_PATH = DATA_DIR / 'fashion-product-images-small-annoy-embeddings.ann'
+    TFLITE_MODEL_PATH = MODEL_DIR / 'model_quantized_encoder.tflite'
+    # ANNOY_INDEX_PATH = DATA_DIR / 'fashion-product-images-small-annoy-embeddings.ann'
     ITEM_MAPPING_PATH = DATA_DIR / 'item_mapping-fashion-product-images-small.json'
+    EMBEDDINGS_PATH= DATA_DIR / 'product_embeddings.npy'
+    FILENAMES_PATH = DATA_DIR / 'image_filenames.json'
 
     EMBEDDING_DIM = 2048 # Example dimension, adjust based on your model!
     # ANNOY_METRIC = 'angular' # Or 'euclidean', etc.
@@ -28,7 +30,7 @@ class Config:
     # --- Model & Search Parameters ---
     # EMBEDDING_DIM = 128 # IMPORTANT: Set this to the actual output dimension of your TFLite model
     NUM_RECOMMENDATIONS = 10 # Number of similar images to return
-    NEIGHBORS_METRIC = 'cosine' # Metric for NearestNeighbors ('cosine', 'euclidean', 'minkowski', etc.)
+    NEIGHBORS_METRIC = 'euclidean' # Metric for NearestNeighbors ('cosine', 'euclidean', 'minkowski', etc.)
                                 # 'cosine' is often good for embeddings. Ensure it matches how embeddings were trained/intended.
 
     # Ensure necessary directories exist

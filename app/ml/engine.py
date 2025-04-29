@@ -181,9 +181,9 @@ class RecommendationEngine:
             for i, idx in enumerate(indices[0]):
                 # Optional: Skip the first result if it's extremely close (likely the query image itself if it was in the dataset)
                 # A simple threshold on distance can work, especially if metric is 'euclidean'
-                # if i == 0 and distances[0][i] < 1e-6: # Adjust threshold as needed
-                #    logger.debug(f"Skipping self-match: index {idx}")
-                #    continue
+                if i == 0 and distances[0][i] < 1e-6: # Adjust threshold as needed
+                   logger.debug(f"Skipping self-match: index {idx}")
+                   continue
 
                 # Get the filename corresponding to the index
                 if 0 <= idx < len(self.image_filenames):

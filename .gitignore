@@ -30,3 +30,4 @@ env/
 .venv/
 ENV/
 __pycache__/
+models/knn_model.joblib
