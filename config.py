@@ -16,7 +16,7 @@ class Config:
     DATA_DIR = BASE_DIR / 'data'
     TFLITE_MODEL_PATH = MODEL_DIR / 'model_quantized_encoder.tflite'
     # ANNOY_INDEX_PATH = DATA_DIR / 'fashion-product-images-small-annoy-embeddings.ann'
-    ITEM_MAPPING_PATH = DATA_DIR / 'item_mapping-fashion-product-images-small.json'
+    # ITEM_MAPPING_PATH = DATA_DIR / 'item_mapping-fashion-product-images-small.json'
     EMBEDDINGS_PATH= DATA_DIR / 'product_embeddings.npy'
     FILENAMES_PATH = DATA_DIR / 'image_filenames.json'
 

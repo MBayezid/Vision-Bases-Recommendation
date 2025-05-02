@@ -15,8 +15,8 @@ config_name = os.getenv('FLASK_CONFIG', 'production')
 application = create_app(config_name)
 
 # Optional: Add logging configuration specifically for production if needed here
-import logging
-handler = logging.FileHandler(os.path.join(APP_DIR, 'passenger.log'))
-handler.setLevel(logging.INFO)
-application.logger.addHandler(handler)
-application.logger.info("Passenger WSGI started.")
+# import logging
+# handler = logging.FileHandler(os.path.join(APP_DIR, 'passenger.log'))
+# handler.setLevel(logging.INFO)
+# application.logger.addHandler(handler)
+# application.logger.info("Passenger WSGI started.")
